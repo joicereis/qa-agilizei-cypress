@@ -10,7 +10,7 @@ describe('Transações', () => {
         cy.visit('https://devfinance-agilizei.netlify.app/#');
     });
 
-    it('Cadastrar uma entrada', () => {
+    it.only('Cadastrar uma entrada', () => {
         criarTransacao("Frelancer", "250.00");
         cy.get('tbody tr td.description').should("have.text", "Frelancer");
     });
@@ -20,7 +20,7 @@ describe('Transações', () => {
         cy.get('tbody tr td.description').should("have.text", "Cinema");
     });
 
-    it.only('Excluir transação', () => {
+    it('Excluir transação', () => {
         //deve se criar a linha nesse teste para que seja possível localizá-la
         criarTransacao("Frelancer", "250.00");
         criarTransacao("PetSitter", "40.00");
